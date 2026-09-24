@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennedy Tuzolana | Portfolio Développeur Full-Stack & IT</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            accent: '#6366f1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .light .glass {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-2 text-xl font-bold tracking-tight">
+                    <span class="text-brand-500">&lt;</span>
+                    <span class="text-white">Kennedy.T</span>
+                    <span class="text-brand-500">/&gt;</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="hover:text-brand-500 transition-colors">À Propos</a>
+                    <a href="#skills" class="hover:text-brand-500 transition-colors">Compétences</a>
+                    <a href="#projects" class="hover:text-brand-500 transition-colors">Projets</a>
+                    <a href="#career" class="hover:text-brand-500 transition-colors">Parcours</a>
+                    <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark/Light Switcher -->
+                    <button id="themeToggle" class="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-all" aria-label="Changer le thème">
+                        <i id="themeIcon" class="fas fa-moon"></i>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="menuToggle" class="md:hidden p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white focus:outline-none" aria-label="Menu principal">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-3 text-sm">
+            <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors">À Propos</a>
+            <a href="#skills" class="block px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors">Compétences</a>
+            <a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors">Projets</a>
+            <a href="#career" class="block px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors">Parcours</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Background Gradient Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-80 h-80 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <!-- Main Content -->
+                <div class="flex-1 text-center md:text-left space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Disponible pour projets & opportunités</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Bonjour, je suis <br/>
+                        <span class="gradient-text">Kennedy Tuzolana </span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-400 font-medium max-w-2xl">
+                        Développeur Web Full-Stack & Technicien Support IT basé à Kinshasa (RDC). Spécialiste de la création d'applications web modernes, de l'intégration de Mobile Money et du dépannage informatique.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="#projects" class="px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold shadow-lg shadow-brand-600/25 transition-all transform hover:-translate-y-0.5">
+                            <i class="fas fa-briefcase mr-2"></i> Voir mes projets
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold border border-slate-700 transition-all transform hover:-translate-y-0.5">
+                            <i class="fas fa-paper-plane mr-2"></i> Me contacter
+                        </a>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center justify-center md:justify-start space-x-5 pt-4 text-slate-400">
+                        <a href="https://www.linkedin.com/in/kennedy-tuzolana-b50062428" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:text-brand-500 hover:border-brand-500/50 transition-all">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://www.github.com/kennedylamala01-bot" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:text-white hover:border-slate-600 transition-all">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/243844553167" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:text-emerald-400 hover:border-emerald-500/50 transition-all">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="mailto:kennedylamala01@gmail.com" class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:text-rose-400 hover:border-rose-500/50 transition-all">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Card Badge -->
+                <div class="relative w-full max-w-sm">
+                    <div class="p-6 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 shadow-2xl relative z-10 space-y-6">
+                        <div class="relative w-32 h-32 mx-auto rounded-full p-1 bg-gradient-to-tr from-brand-500 to-brand-accent overflow-hidden">
+                            <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center text-4xl font-bold text-brand-400">
+                                KT
+                            </div>
+                        </div>
+
+                        <div class="text-center space-y-1">
+                            <h2 class="text-xl font-bold text-white">Kennedy Tuzolana</h2>
+                            <p class="text-xs text-brand-400 font-medium">Kinshasa, République Démocratique du Congo</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 text-center pt-2">
+                            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <span class="block text-xl font-bold text-white">UPC</span>
+                                <span class="text-xs text-slate-400">Génie Informatique</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <span class="block text-xl font-bold text-emerald-400">Freelance</span>
+                                <span class="text-xs text-slate-400">Web & IT Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Présentation</h2>
+                <h3 class="text-3xl font-extrabold text-white">À Propos de Moi</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-slate-300 leading-relaxed">
+                    <p>
+                        Étudiant en <strong class="text-white">Génie Informatique (Administration Réseau & Développement)</strong> à l'Université Protestante au Congo (UPC), je combine une double expertise théorique et pratique dans la tech.
+                    </p>
+                    <p>
+                        En tant que développeur web, je conçois des applications web dynamiques et performantes, avec une affinité particulière pour l'intégration de solutions de <strong class="text-brand-400">Paiement Mobile (M-Pesa, Orange Money, FlexPay)</strong> adaptées au marché africain.
+                    </p>
+                    <p>
+                        En parallèle, mes activités de technicien support m'amènent à résoudre des pannes complexes de systèmes et matériels informatiques, déployer des infrastructures virtuelles et concevoir des clés bootables multi-OS optimisées.
+                    </p>
+                </div>
+
+                <!-- Highlight Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-500/40 transition-all space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400">
+                            <i class="fas fa-code text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-white">Full-Stack Web</h4>
+                        <p class="text-xs text-slate-400">Création d'applications Web dynamiques, PWA & architectures client-serveur.</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition-all space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                            <i class="fas fa-wallet text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-white">APIs & Fintech</h4>
+                        <p class="text-xs text-slate-400">Intégration d'opérateurs Mobile Money (FlexPay, FedaPay, M-Pesa).</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/40 transition-all space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                            <i class="fas fa-tools text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-white">Hardware & Support</h4>
+                        <p class="text-xs text-slate-400">Diagnostic, micro-soudure, maintenance de PC et consoles de jeux.</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition-all space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+                            <i class="fas fa-shield-halved text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-white">Cyber & Réseaux</h4>
+                        <p class="text-xs text-slate-400">Administration système Linux/Windows et environnements de virtualisation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Savoir-faire</h2>
+                <h3 class="text-3xl font-extrabold text-white">Compétences Techniques</h3>
+            </div>
+
+            <!-- Grid of Skill Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Web Dev -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/40 transition-all space-y-4">
+                    <div class="flex items-center space-x-3 text-brand-400">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                        <h4 class="text-lg font-bold text-white">Développement Web</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">HTML5</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">CSS3 / Tailwind</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">JavaScript (ES6+)</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">PHP</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">PWA</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Responsive UI</span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/40 transition-all space-y-4">
+                    <div class="flex items-center space-x-3 text-emerald-400">
+                        <i class="fas fa-database text-2xl"></i>
+                        <h4 class="text-lg font-bold text-white">Bases de Données</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">MySQL</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">PostgreSQL</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Conception MCD/MLD</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Requêtes SQL</span>
+                    </div>
+                </div>
+
+                <!-- Payments & APIs -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/40 transition-all space-y-4">
+                    <div class="flex items-center space-x-3 text-indigo-400">
+                        <i class="fas fa-credit-card text-2xl"></i>
+                        <h4 class="text-lg font-bold text-white">Paiements & APIs</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">M-Pesa API</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Orange Money</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Airtel Money</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">FlexPay Gateway</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">FedaPay</span>
+                    </div>
+                </div>
+
+                <!-- Systems & Networks -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/40 transition-all space-y-4">
+                    <div class="flex items-center space-x-3 text-amber-400">
+                        <i class="fas fa-server text-2xl"></i>
+                        <h4 class="text-lg font-bold text-white">Systèmes & Réseaux</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Windows 11</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Linux (Ubuntu, Kali, Mint)</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">VirtualBox</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Ventoy & Boot Multi-OS</span>
+                    </div>
+                </div>
+
+                <!-- Hardware & Support -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/40 transition-all space-y-4">
+                    <div class="flex items-center space-x-3 text-rose-400">
+                        <i class="fas fa-microchip text-2xl"></i>
+                        <h4 class="text-lg font-bold text-white">Hardware & Support</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Diagnostic Hardware</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Maintenance PC / Consoles</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Micro-soudure de base</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Dépannage Système</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Methods -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/40 transition-all space-y-4">
+                    <div class="flex items-center space-x-3 text-cyan-400">
+                        <i class="fas fa-screwdriver-wrench text-2xl"></i>
+                        <h4 class="text-lg font-bold text-white">Outils & Méthodes</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Git / GitHub</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">VS Code</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">Postman</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">DiskPart / BitLocker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <h2 class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Portfolio</h2>
+                <h3 class="text-3xl font-extrabold text-white">Projets Réalisés</h3>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterProjects('all')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-600 text-white transition-all">Tous</button>
+                <button onclick="filterProjects('web')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">Web & PWA</button>
+                <button onclick="filterProjects('fintech')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">Paiement / API</button>
+                <button onclick="filterProjects('it')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">IT & Hardware</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Pizza Bella -->
+                <div class="project-card group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-brand-500/50 transition-all flex flex-col" data-category="web">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center bg-gradient-to-tr from-amber-500/20 to-brand-500/20">
+                        <i class="fas fa-pizza-slice text-6xl text-amber-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-[10px] font-bold text-amber-400 border border-amber-500/30 uppercase">E-Commerce & PWA</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <h4 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Pizza Bella</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Plateforme e-commerce de commande en ligne avec tableau de bord administrateur en temps réel, conversion PWA et notifications push.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-2">
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">HTML/CSS</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">JavaScript</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">PHP</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">MySQL</span>
+                            </div>
+                            <button onclick="openModal('pizza-bella')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-all flex items-center justify-center space-x-2">
+                                <span>Détails du projet</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Portail Academique UPC -->
+                <div class="project-card group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-brand-500/50 transition-all flex flex-col" data-category="fintech">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center bg-gradient-to-tr from-brand-500/20 to-indigo-500/20">
+                        <i class="fas fa-graduation-cap text-6xl text-brand-400 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-[10px] font-bold text-brand-400 border border-brand-500/30 uppercase">Fintech & Université</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <h4 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Portail Paiement UPC</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Portail de paiement d'acompte académique facilitant le règlement des frais par les étudiants via Mobile Money (M-Pesa, Orange Money).
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-2">
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">PHP</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">FlexPay API</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">MySQL</span>
+                            </div>
+                            <button onclick="openModal('upc-portal')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-all flex items-center justify-center space-x-2">
+                                <span>Détails du projet</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Support Technique & Infrastructure -->
+                <div class="project-card group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-brand-500/50 transition-all flex flex-col" data-category="it">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center bg-gradient-to-tr from-emerald-500/20 to-teal-500/20">
+                        <i class="fas fa-laptop-medical text-6xl text-emerald-400 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-[10px] font-bold text-emerald-400 border border-emerald-500/30 uppercase">Infrastructure IT</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <h4 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Support IT & Deployment</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Service de diagnostic matériel, micro-soudure, déploiement d'images système complexes et clés USB de boot universelles.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-2">
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">Ventoy</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">Hardware</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">VirtualBox</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">Linux/Win</span>
+                            </div>
+                            <button onclick="openModal('it-support')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition-all flex items-center justify-center space-x-2">
+                                <span>Détails du projet</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career / Education Section -->
+    <section id="career" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Évolution</h2>
+                <h3 class="text-3xl font-extrabold text-white">Parcours & Objectifs</h3>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+                <!-- Step 1 -->
+                <div class="relative pl-8 group">
+                    <!-- Dot -->
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    <span class="hidden md:block absolute -left-32 top-1 text-xs font-bold text-brand-400 w-24 text-right">En cours</span>
+                    <div class="space-y-2">
+                        <span class="md:hidden inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-brand-500/10 text-brand-400 border border-brand-500/20">En cours</span>
+                        <h4 class="text-lg font-bold text-white">Licentiat / Graduat en Génie Informatique</h4>
+                        <p class="text-xs text-brand-400 font-medium">Université Protestante au Congo (UPC)</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Spécialisation en Administration Réseau, Conception de Systèmes d'Information et Développement Logiciel.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-400 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    <span class="hidden md:block absolute -left-32 top-1 text-xs font-bold text-slate-400 w-24 text-right">Freelance</span>
+                    <div class="space-y-2">
+                        <span class="md:hidden inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Actif</span>
+                        <h4 class="text-lg font-bold text-white">Consultant Développeur & IT Support</h4>
+                        <p class="text-xs text-emerald-400 font-medium">Indépendant / Kinshasa</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Interventions techniques pour particuliers et PME (réparation d'équipements, déploiements systèmes, création d'applications web personnalisées).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    <span class="hidden md:block absolute -left-32 top-1 text-xs font-bold text-indigo-400 w-24 text-right">Futur</span>
+                    <div class="space-y-2">
+                        <span class="md:hidden inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Objectif</span>
+                        <h4 class="text-lg font-bold text-white">Master en Cybersécurité & Sécurité Réseau</h4>
+                        <p class="text-xs text-indigo-400 font-medium">Perspectives d'Avenir</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Approfondissement des compétences en audits de sécurité, pentesting et sécurisation des architectures critiques d'entreprises.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Communication</h2>
+                <h3 class="text-3xl font-extrabold text-white">Me Contacter</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Info Cards -->
+                <div class="space-y-4">
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-400 shrink-0">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">Téléphone / WhatsApp</span>
+                            <a href="https://wa.me/243844553167" target="_blank" class="text-sm font-semibold text-white hover:text-brand-400 transition-colors">+243 84 45 53 167</a>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-400 shrink-0">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">Email</span>
+                            <a href="mailto:kennedylamala01@gmail.com" class="text-sm font-semibold text-white hover:text-brand-400 transition-colors">kennedylamala01@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-400 shrink-0">
+                            <i class="fas fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">Localisation</span>
+                            <span class="text-sm font-semibold text-white">Kinshasa, RDC</span>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-400 shrink-0">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">Profil Pro</span>
+                            <a href="https://www.linkedin.com/in/kennedy-lamala-b50062428" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-brand-400 transition-colors">Kennedy Lamala</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Form -->
+                <div class="lg:col-span-2 p-8 rounded-2xl bg-slate-900 border border-slate-800">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-slate-300">Votre nom</label>
+                                <input type="text" required placeholder="Mon nom" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-slate-300">Votre email</label>
+                                <input type="email" required placeholder="email@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-semibold text-slate-300">Sujet</label>
+                            <input type="text" required placeholder="Proposition de projet / Opportunité" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-semibold text-slate-300">Message</label>
+                            <textarea rows="4" required placeholder="Bonjour Kennedy, je souhaiterais échanger avec vous concernant..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold shadow-lg shadow-brand-600/20 transition-all flex items-center justify-center space-x-2">
+                            <i class="fas fa-paper-plane text-xs"></i>
+                            <span>Envoyer le message</span>
+                        </button>
+
+                        <div id="formSuccess" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium text-center">
+                            <i class="fas fa-circle-check mr-2"></i> Message envoyé avec succès ! Merci de votre intérêt, je vous recontacterai rapidement.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Kennedy Lamala. Tous droits réservés.</p>
+            <p>Conçu & Développé avec passion à Kinshasa 🇨🇩</p>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-6 space-y-6 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div id="modalContent" class="space-y-4">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                themeIcon.className = 'fas fa-sun text-amber-400';
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Project Filtering
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.project-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white');
+                btn.classList.add('bg-slate-800', 'text-slate-400');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-400');
+            event.target.classList.add('bg-brand-600', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Project Data for Modal
+        const projectsData = {
+            'pizza-bella': {
+                title: 'Pizza Bella — E-Commerce & PWA',
+                category: 'Application Web',
+                description: 'Plateforme complète de gestion et de commande de pizzas en ligne. L’application intègre une expérience fluide PWA permettant une utilisation comme application native sur smartphone, ainsi qu’un panneau d’administration en direct pour la gestion du menu et des commandes.',
+                features: ['Interface Responsive PWA', 'Panneau d’administration en temps réel', 'Panier d’achat dynamique', 'Système de notifications push'],
+                tech: ['HTML5', 'CSS3', 'JavaScript ES6', 'PHP Native', 'MySQL']
+            },
+            'upc-portal': {
+                title: 'Portail de Paiement Académique UPC',
+                category: 'Fintech & API Integration',
+                description: 'Solution web sécurisée conçue pour simplifier le paiement des acomptes universitaires à l’Université Protestante au Congo. Intègre les passerelles Mobile Money locales pour une validation rapide des reçus.',
+                features: ['Intégration FlexPay (M-Pesa, Orange Money)', 'Génération automatique de reçus numériques', 'Suivi des paiements dans un tableau de bord', 'Vérification en temps réel des transactions'],
+                tech: ['PHP', 'FlexPay API', 'MySQL', 'Bootstrap / Tailwind']
+            },
+            'it-support': {
+                title: 'Infrastructure IT & Diagnostic Hardware',
+                category: 'Support Technique & Réseau',
+                description: 'Services d’assistance technique spécialisée comprenant la réparation de micro-composants, la configuration de clés de démarrage multi-systèmes avec Ventoy, et le déploiement virtuel sur Linux/Windows.',
+                features: ['Clé bootable personnalisée Ventoy multi-OS', 'Diagnostic précis pannes matérielles et micro-soudure', 'Déploiement d’environnements virtuels (VirtualBox)', 'Optimisation et désinfection système'],
+                tech: ['Ventoy', 'DiskPart', 'VirtualBox', 'Windows 11 / Linux Kali & Mint']
+            }
+        };
+
+        // Modal Handlers
+        function openModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const content = document.getElementById('modalContent');
+            const data = projectsData[projectId];
+
+            if (!data) return;
+
+            content.innerHTML = `
+                <span class="inline-block px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold uppercase">${data.category}</span>
+                <h3 class="text-2xl font-bold text-white">${data.title}</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">${data.description}</p>
+                
+                <div class="space-y-2">
+                    <h4 class="text-xs font-bold text-brand-400 uppercase">Fonctionnalités Clés :</h4>
+                    <ul class="list-disc list-inside text-xs text-slate-400 space-y-1">
+                        ${data.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="space-y-2 pt-2">
+                    <h4 class="text-xs font-bold text-brand-400 uppercase">Technologies :</h4>
+                    <div class="flex flex-wrap gap-2">
+                        ${data.tech.map(t => `<span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 text-[11px] font-medium border border-slate-700">${t}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Form Submit Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('formSuccess');
+            successMsg.classList.remove('hidden');
+            e.target.reset();
+
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
